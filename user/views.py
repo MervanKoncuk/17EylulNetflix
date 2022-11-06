@@ -63,6 +63,7 @@ def userLogin(request):
 
     return render(request, 'login.html')
 
+
 def profiles(request):
     profiller = Profile.objects.filter(user = request.user)
     context = {
@@ -70,6 +71,8 @@ def profiles(request):
     }
     return render(request, 'browse.html', context)
 
+
+#Profil oluşturma fonskiyonu
 def olustur(request):
     form = ProfileForm()
     if request.method == 'POST':
